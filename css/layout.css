@@ -33,7 +33,7 @@ header {
    height: 800px;
    min-height: 500px;
    width: 100%;
-   background: #161415 url(../images/header-background.jpg) no-repeat top center;
+   background: #161415 url(../images/slabs.png) no-repeat top center;
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    text-align: center;
@@ -179,8 +179,8 @@ ul#nav li a {
 }
 
 ul#nav li a:active { background-color: transparent !important; }
-ul#nav li.current a { color: #F06000; }
-
+ul#nav li.current a { color: #FF0505; }
+/* original nav color #f06000 */
 
 /* ------------------------------------------------------------------ */
 /* c. About Section
@@ -325,85 +325,85 @@ ul#nav li.current a { color: #F06000; }
    border-radius: 3px 0 0 3px;
 }
 
-.photoshop {
-  	width: 60%;
-  	-moz-animation: photoshop 2s ease;
-  	-webkit-animation: photoshop 2s ease;
+.red {
+  	width: 65%;
+  	-moz-animation: offensive 2s ease;
+  	-webkit-animation: offensive 2s ease;
 }
-.illustrator {
+.blue {
   	width: 55%;
-  	-moz-animation: illustrator 2s ease;
-  	-webkit-animation: illustrator 2s ease;
+  	-moz-animation: defensive 2s ease;
+  	-webkit-animation: defensive 2s ease;
 }
-.wordpress {
+.green {
   	width: 50%;
-  	-moz-animation: wordpress 2s ease;
-  	-webkit-animation: wordpress 2s ease;
+  	-moz-animation: engineering 2s ease;
+  	-webkit-animation: engineering 2s ease;
 }
-.css {
+.gold {
   	width: 90%;
-  	-moz-animation: css 2s ease;
-  	-webkit-animation: css 2s ease;
+  	-moz-animation: architecture 2s ease;
+  	-webkit-animation: architecture 2s ease;
 }
-.html5 {
+.silver {
   	width: 80%;
-  	-moz-animation: html5 2s ease;
-  	-webkit-animation: html5 2s ease;
+  	-moz-animation: governance 2s ease;
+  	-webkit-animation: governance 2s ease;
 }
-.jquery {
-  	width: 50%;
-  	-moz-animation: jquery 2s ease;
-  	-webkit-animation: jquery 2s ease;
+.purple {
+  	width: 60%;
+  	-moz-animation: collab 2s ease;
+  	-webkit-animation: collab 2s ease;
 }
 
-@-moz-keyframes photoshop {
+@-moz-keyframes offensive {
   0%   { width: 0px;  }
-  100% { width: 60%;  }
+  100% { width: 65%;  }
 }
-@-moz-keyframes illustrator {
+@-moz-keyframes defensive {
   0%   { width: 0px;  }
   100% { width: 55%;  }
 }
-@-moz-keyframes wordpress {
+@-moz-keyframes engineering {
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
-@-moz-keyframes css {
+@-moz-keyframes architecture {
   0%   { width: 0px;  }
   100% { width: 90%;  }
 }
-@-moz-keyframes html5 {
+@-moz-keyframes governance {
   0%   { width: 0px;  }
   100% { width: 80%;  }
 }
-@-moz-keyframes jquery {
-  0%   { width: 0px;  }
-  100% { width: 50%;  }
-}
-
-@-webkit-keyframes photoshop {
+@-moz-keyframes collab {
   0%   { width: 0px;  }
   100% { width: 60%;  }
 }
-@-webkit-keyframes illustrator {
+
+@-webkit-keyframes offensive {
+  0%   { width: 0px;  }
+  100% { width: 65%;  }
+}
+@-webkit-keyframes defensive {
   0%   { width: 0px;  }
   100% { width: 55%;  }
 }
-@-webkit-keyframes wordpress {
+@-webkit-keyframes engineering {
   0%   { width: 0px;  }
   100% { width: 50%;  }
 }
-@-webkit-keyframes css {
+@-webkit-keyframes architecture {
   0%   { width: 0px;  }
   100% { width: 90%;  }
 }
-@-webkit-keyframes html5 {
+@-webkit-keyframes governance {
   0%   { width: 0px;  }
   100% { width: 80%;  }
 }
-@-webkit-keyframes jquery {
+@-webkit-keyframes collab {
   0%   { width: 0px;  }
-  100% { width: 50%;  }
+  100% { width: 60%;  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -411,7 +411,9 @@ ul#nav li.current a { color: #F06000; }
 /* ------------------------------------------------------------------ */
 
 #portfolio {
-   background: #ebeeee;
+   /* background: #ebeeee; <original color> */
+   /* background: #313131 url(../images/slabs.png) repeat top center; <find a better tile> */
+   background: #2B2B2B;
    padding-top: 90px;
    padding-bottom: 60px;
 }
@@ -427,7 +429,7 @@ ul#nav li.current a { color: #F06000; }
 /* Portfolio Content */
 #portfolio-wrapper .columns { margin-bottom: 36px; }
 .portfolio-item .item-wrap {
-   background: #fff;
+   background: transparent;
    overflow: hidden;
    position: relative;
 
@@ -459,6 +461,7 @@ ul#nav li.current a { color: #F06000; }
 	-o-transition: opacity 0.3s ease-in-out;
 	transition: opacity 0.3s ease-in-out;
 
+   /* background: url(../images/overlay-bg.png) repeat; <original> */
    background: url(../images/overlay-bg.png) repeat;
 }
 .portfolio-item .item-wrap .link-icon {
@@ -595,10 +598,13 @@ ul#nav li.current a { color: #F06000; }
 #call-to-action h1 span { display: none; }
 #call-to-action .header-col h1:before {
    font-family: 'FontAwesome';
-   content: "\f0ac";
-	padding-right: 10px;
-	font-size: 72px;
-   line-height: 72px;
+   font: var(--fa-font-solid);
+   /* content: "\f18b"; /* this is the ren symbol, now subscription-only  */
+   /* content: '\f0ac'; /* this is the old globe, now subscription-only */
+   content: '\f57d'; /* this is the new globe in the free tier */
+   padding-right: 10px;
+	font-size: 64px;
+   line-height: 64px;
    text-align: left;
    float: left;
    color: #fff;
@@ -614,7 +620,7 @@ ul#nav li.current a { color: #F06000; }
 #call-to-action h2 a {
    color: inherit;
 }
-#call-to-action p {
+#call-to-action p { /* this is the text beside the globe icon */
    color: #636363;
    font-size: 17px;
 }
@@ -635,11 +641,11 @@ call-to-action .button {
 }
 
 /* ------------------------------------------------------------------
-/* g. Testimonials
+/* g. Testimonials, used as quote and qr
 /* ------------------------------------------------------------------ */
 
-#testimonials {
-   background: #1F1F1F url(../images/testimonials-bg.jpg) no-repeat center center;
+#test {
+   background: #1F1F1F url(../images/spirit.png) no-repeat center center;
    background-size: cover !important;
 	-webkit-background-size: cover !important;
    background-attachment: fixed;
@@ -649,57 +655,65 @@ call-to-action .button {
    width: 100%;
    overflow: hidden;
 }
-#testimonials .text-container {
+#test .text-container {
    padding-top: 96px;
    padding-bottom: 66px;
+   padding-left: 196px; /* <align with qr, optional> */
 }
-#testimonials h1 {
+#test h1 {
    font: 18px/24px 'opensans-bold', sans-serif;   
    text-transform: uppercase;
    letter-spacing: 3px;
    color: #fff;
 }
-#testimonials h1 span { display: none; }
-#testimonials .header-col { padding-top: 9px; }
-#testimonials .header-col h1:before {
+#test h1 span { display: none; }
+#test .header-col { padding-top: 9px; }
+#test .header-col h1:before {
    font-family: 'FontAwesome';
-   content: "\f10d";
+   /* content: "\f10d"; <this is the large quotation marks> */
 	padding-right: 10px;
-	font-size: 72px;
-   line-height: 72px;
+	font-size: 64px;
+   line-height: 64px;
    text-align: left;
    float: left;
    color: #fff;
 }
 
 /*	Blockquotes */
-#testimonials blockquote {
-   margin: 0 0px 30px 0px;
+#test blockquote {
+   margin: padding-left: 0px 0px 30px 0px;
    padding-left: 0;
+   /* text-align: right; <doing this makes it ugly> */
    position: relative;
    text-shadow: 0px 1px 3px rgba(0, 0, 0, 1);
 }
-#testimonials blockquote:before { content: none; }
-#testimonials blockquote p {
+#test blockquote:before { content: none; }
+#test blockquote p {
    font-family: 'librebaskerville-italic', serif;
    padding: 0;
    font-size: 24px;
    line-height: 48px;
    color: #fff
 }
-#testimonials blockquote cite {
+#test blockquote cite {
    display: block;
    font-size: 12px;
    font-style: normal;
    line-height: 18px;
    color: #fff;
 }
-#testimonials blockquote cite:before { content: "\2014 \0020"; }
-#testimonials blockquote cite a,
-#testimonials blockquote cite a:visited { color: #8B9798; border: none }
+#test blockquote cite:before { content: "\2014 \0020"; }
+#test blockquote cite a,
+#test blockquote cite a:visited { color: #8B9798; border: none }
 
 /* Flex Slider
 /* ------------------------------------------------------------------ */
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Reset */
 .flexslider a:active,
@@ -711,7 +725,7 @@ call-to-action .button {
 
 /* Necessary Styles */
 .flexslider {
-   position: relative;
+   position: center;
    zoom: 1;
    margin: 0;
    padding: 0;
@@ -750,8 +764,8 @@ call-to-action .button {
 .flex-control-nav {
     width: 100%;
     position: absolute;
-    bottom: -20px;
-    text-align: left;
+    bottom: -40px;
+    text-align: center;
 }
 .flex-control-nav li {
     margin: 0 6px;
@@ -808,10 +822,11 @@ call-to-action .button {
 #contact h1 span { display: none; }
 #contact h1:before {
    font-family: 'FontAwesome';
+   font: var(--fa-font-solid);
    content: "\f0e0";
 	padding-right: 10px;
-	font-size: 72px;
-   line-height: 72px;
+	font-size: 64px;
+   line-height: 64px;
    text-align: left;
    float: left;
    color: #ebeeee;
@@ -918,6 +933,174 @@ call-to-action .button {
    color: #474747 !important;
    border: none;
 }
+
+/* image carousel */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.slider {
+  --slider-width: 1024px;
+  --slider-height: 576px;
+  --slider-bullets-spacing-y: 16px;
+  --slider-bullets-height: 12px;
+  --slider-shadow: 0px 10px 26px 3px rgb(0 0 0 / 10%);
+  --slider-border-width: 8px;
+
+  align-items: anchor-center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+  width: var(--slider-width);
+  height: calc(
+    var(--slider-bullets-spacing-y) + var(--slider-bullets-height) +
+      var(--slider-height) + (var(--slider-border-width) * 2)
+  );
+}
+
+.slider__content {
+  position: absolute;
+  bottom: calc(var(--slider-bullets-spacing-y) + var(--slider-bullets-height));
+  left: 50%;
+  z-index: 5;
+  width: var(--slider-width);
+  height: var(--slider-height);
+  overflow: hidden;
+  border: var(--slider-border-width) solid #fff;
+  border-radius: 16px;
+  translate: -50% 0;
+
+  > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    transition: translate 0.5s ease-in-out;
+    object-fit: cover;
+  }
+}
+
+.slider-caption {
+      width: 100%;
+      padding: 2%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: rgba(0,0,0,.7);
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,1);
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+      z-index: 999;
+}
+
+.slider__control {
+  &::after {
+    position: absolute;
+    bottom: calc(
+      50% + (var(--slider-bullets-spacing-y) + var(--slider-bullets-height)) / 2
+    );
+    z-index: 10;
+    width: 32px;
+    height: 64px;
+    cursor: pointer;
+    content: "";
+    background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6"%2F%3E%3C%2Fsvg%3E')
+      white;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
+    transition: width 0.2s cubic-bezier(0.11, 1.03, 0.82, 1.33);
+    translate: 0 50%;
+  }
+
+  &:hover::after {
+    width: 48px;
+  }
+
+  > input {
+    display: block;
+    height: var(--slider-bullets-height);
+    aspect-ratio: 1/1;
+    margin: 0;
+    appearance: none;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 9999px;
+    box-shadow: var(--slider-shadow);
+    opacity: 0.5;
+    transition: all 0.2s cubic-bezier(0.11, 1.03, 0.82, 1.33);
+    scale: 0.75;
+
+    &:hover {
+      scale: 1;
+    }
+
+    &:checked {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+}
+
+.slider__item {
+  /* All slides except current */
+  &:not(:has(input:checked)) {
+    .slider__content > img {
+      translate: -100% 0;
+    }
+
+    .slider__control::after {
+      right: 100%;
+      border-top-left-radius: 9999px;
+      border-bottom-left-radius: 9999px;
+    }
+     
+    & .slider-caption {
+      display: none;
+    }
+  }
+
+  /* Current slide */
+  &:has(input:checked) {
+    z-index: 1;
+
+    .slider__content > img {
+      translate: 0 0;
+    }
+
+    .slider__control::after {
+      display: none;
+    }
+  }
+
+  /* Slides after current slide */
+  &:has(input:checked) ~ & {
+    z-index: 5;
+
+    .slider__content > img {
+      translate: 100% 0;
+    }
+
+    & .slider__control::after {
+      right: auto;
+      left: 100%;
+      rotate: 180deg;
+    }
+  }
+
+  /* Direct next slide */
+  &:has(input:checked) + & {
+    z-index: 7;
+    display: block;
+  }
+} 
 
 
 /* ------------------------------------------------------------------ */
