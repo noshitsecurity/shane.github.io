@@ -96,22 +96,25 @@
             <p>Every cryptogram, puzzle, or application of technique in the challenges available in the NSS Jurassic Jungle® training content was designed to capture the spirit and essence of what cryptography empowers the mind to do. From the rudimentary ease of breaking simple ciphers, to the layered combination of advanced algorithms and concepts to produce challenges that unlock themselves, each design was carefully crafted not only to teach a valuable, repeatable lesson, but to honor the historical achievements of those who came before us by applying old concepts in exciting new ways that fuse technology with art to birth wildly original content that becomes more than the sum of its parts.</p>
 
             <p>When viewing the content here, you are urged to visit the <a href="https://www.noshitsecurity.com/help" target="_blank">Dinosaur Helpdesk System</a> on the NSS page and attempt to use the Glossary to help you not only break the codes, but to discover the underlying patterns beneath them. Much like the entry challenge available on the first page, many of our puzzles make use of several different methods in combination to teach lessons that go beyond simple vocabulary. Every single cryptogram can be approached in different ways. The glossary terms and tools available on this page will help you learn by doing.</p>
-         
-            <hr />
-
+      
          </div><!-- end columns -->
+         
+         <div class="row add-bottom">
+            <hr />
+         </div>
+
 
          <div class="twelve columns add-bottom"> 
 
             <h3>Example one: digthis.py</h3>
 
             <p>
-               <img src="images/crypto/digthis.png">
+               <img src="images/crypto/digthis.png" />
                <small>This image contains a python script that only executes via the interpreter, in which it queries the NoShitSecurity website for a DNS TXT record and then deciphers it to deliver a special link.</small>
             </p>
 
             <dl class="lining">
-               <dt><b>Methods</b></dt>
+               <dt><b>Concepts</b></dt>
                <dd><code></code> Transposition, Substitution, Base64
                <dt><b>Technologies</b></dt>
                <dd><code></code> Python, Directory Name Service, Dig, Unix Shell
@@ -126,8 +129,131 @@
             </p>
 
          </div> <!-- end columns -->
-      </div> <!-- end row -->   
-   </section> <!-- end section 04 -->
+         
+         <div class="row add-bottom">
+            <hr />
+         </div>
+
+         <div class="twelve columns add-bottom"> 
+
+            <h3>Example two: The Padlock</h3>
+
+            <p>
+               <img src="images/crypto/entry.png" /><br />
+               <small>This image contains a layered cryptogram that combines 5 different cryptograhpic concepts and unlocks itself to reveal its own solution.</small>
+            </p>
+
+            <dl class="lining">
+               <dt><b>Concepts</b></dt>
+               <dd><code></code> Substitution, Variant Beaufort, One-Time Pad, CHAP, Triple DES
+               <dt><b>Technologies</b></dt>
+               <dd><code></code> CyberChef or pencil and paper
+            </dl>
+
+         </div><!-- end columns -->
+         
+         <div class="twelve columns add-bottom"> 
+            
+            <h5>Context</h5>
+            <p>
+               This cryptogram became a fan favorite, and they used it to vet new candidates during technical interviews for their companies. I called this technique the "padlock" and it is still my favorite demonstration, and one of our best tricks. This cryptogram was also used to demonstrate how solving the final "K4" passage of Kryptos would require much more than simply knowing what the plaintext was in a given position. 
+            </p>
+            <p>For example:</p>
+               <code>congratulations.................<br/>.......................thirteen</code>
+            </p>
+
+            <p>
+               One of Jim Sanborn's hints is delivered exactly like this: you get a few characters surrounded by empty spaces, with the idea being that when the final passage of K4 is deciphered, the words "BERLINCLOCK" and "EASTNORTHEAST" will be visible in the solution. However, due to the masking technique that is applied either before, after, or during other calculations, without knowing the <i>method</i>, even if you had the correct key you may never land on the correct answer. When the final part of the NSS cryptogram was given to Kryptos enthusiasts, not a single one of them were able to decipher it, because solving the NSS entry cryptogram requires the entire thing to be left intact while a series of operations are applied to it. By applying the masking technique, you unlock the first passage, which unlocks the second, then the third, until the cryptogram solves itself and grants visibility to the final passage. And like Sanborn's design, the final passage leads to another puzzle.
+            </p>
+         
+         </div> <!-- end columns -->
+         
+         <div class="row add-bottom">
+            <hr />
+         </div>
+         
+         <div class="twelve columns add-bottom"> 
+            
+            <h3>Example three: The Gordian Knot</h3>
+            <p>
+               <img src="images/crypto/knot.png" alt="" />
+               <small>This image contains an example of "The Gordian Knot" first introduced in Tier II, and is used as a metaphor for inventing an unexpected method to solve a seemingly intractable problem.</small>
+            </p>
+
+            <dl class="lining">
+               <dt><b>Concepts</b></dt>
+               <dd><code></code> Variant Beaufort, CHAP, Differential Cryptanalysis
+               <dt><b>Technologies</b></dt>
+               <dd><code></code> CyberChef or pencil and paper
+            </dl>
+
+         </div> <!-- end columns -->
+
+            <div class="twelve columns add-bottom"> 
+            
+            <h5>Context</h5>
+            <p>
+               The cutting of the Gordian Knot is an Ancient Greek legend associated with Alexander the Great in Gordium in Phrygia, regarding a complex knot that tied an oxcart. Reputedly, whoever could untie it would be destined to rule all of Asia. In 333 BC, Alexander was challenged to untie the knot. In one interpretation of the legend, instead of untangling it laboriously as everyone expected, he dramatically cut through it with his sword. In another interpretation, Alexander the Great wanted to untie the knot but struggled to do so before reasoning that it would make no difference how the knot was loosed. Although sources from antiquity disagree with this interpretation, we used both versions.
+            </p>
+
+            <p>For example:</p>
+               <code style="color: red">afell://</code><code>ihs.gaddbfdavgcemk.nkf/</code><code style="color: green">elpis</code>
+            </p>
+
+            <p>
+               The first thing we notice is the underlined portions on either end of the cryptogram being the <i style="color: red">prefix</i> on the left side and the <i style="color: green">keyword</i> on the right side. By using simple critical thinking skills, we can infer that the afell:// part must surely decipher to https://, meaning there is more than one way to solve this problem: you can either attempt to brute force the solution by working your way from left to right and using differential cryptanalysis and adaptive chosen plaintext attacks to render the https:// prefix, or you can cut directly through the center by discovering the key. In these challenges, the key to solving the puzzle is hidden in plain sight and quite literally staring you right in the face.
+            
+            <p>
+               To align with Alexander's assumption that it would make no difference how the knot was loosed, we provided several decrypted versions of these "gordian knots" during all of our Tier II challenges, allowing students to leverage attacks like Ciphertext Only, Known Plaintext, Related Key, Chosen Ciphertext, and adaptive permutations to discover strings that leveraged mimic functions or key wrapping operations to obfuscate or even oppose the traditional method of using the keyword to solve the puzzle. As time went on, the Gordian Knot was used in all remaining challenges, and by Tier V, the prefix was dropped, the entire string was obfuscated, and the keyword became the only visible part.
+            </p>
+
+            <p>For example:</p>
+               <code>xxxxxxxxxxxxxx.xxx/history</code>
+            </p>
+            
+            <aside class="pull-quote add-bottom">
+               <blockquote cite="https://en.wikipedia.org/wiki/Gordian_Knot" target="_blank">
+                  <p>
+                     Alexander pulled the linchpin from the pole to which the yoke was fastened, exposing the two ends of the cord and allowing him to untie the knot without having to cut through it.
+                  </p>
+               </blockquote>
+            </aside>
+         </div>
+
+         <div class="row">
+            <hr />
+         </div>
+      </div>
+   </section>
+
+   <!-- Section 06: cryptanalysis -->
+   <section id="cryptanalysis" style="padding: 90px 0 72px; background: #fff;">
+      <div class="row add-bottom">
+         <div class="twelve columns add-bottom">
+            <h3>Cryptanalysis: Strategies and attack patterns</h3>
+
+            <p>Every cryptogram, puzzle, or application of technique in the challenges available in the NSS Jurassic Jungle® training content was designed to capture the spirit and essence of what cryptography empowers the mind to do. From the rudimentary ease of breaking simple ciphers, to the layered combination of advanced algorithms and concepts to produce challenges that unlock themselves, each design was carefully crafted not only to teach a valuable, repeatable lesson, but to honor the historical achievements of those who came before us by applying old concepts in exciting new ways that fuse technology with art to birth wildly original content that becomes more than the sum of its parts.</p>
+
+            <p>When viewing the content here, you are urged to visit the <a href="https://www.noshitsecurity.com/help" target="_blank">Dinosaur Helpdesk System</a> on the NSS page and attempt to use the Glossary to help you not only break the codes, but to discover the underlying patterns beneath them. Much like the entry challenge available on the first page, many of our puzzles make use of several different methods in combination to teach lessons that go beyond simple vocabulary. Every single cryptogram can be approached in different ways. The glossary terms and tools available on this page will help you learn by doing.</p>
+         </div><!-- end columns -->
+         
+         <div class="row add-bottom">
+            <hr />
+         </div>
+
+
+         <div class="twelve columns add-bottom"> 
+
+            <h3>Example one: digthis.py</h3>
+
+            <p>
+               <img src="images/crypto/digthis.png" />
+               <small>This image contains a python script that only executes via the interpreter, in which it queries the NoShitSecurity website for a DNS TXT record and then deciphers it to deliver a special link.</small>
+            </p>
+
+      </div>
+   </section>
+   
 
    <!-- Section 06: terminology -->
    <section id="context" style="padding: 90px 0 72px; background: #fff;">
