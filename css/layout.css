@@ -1031,7 +1031,7 @@ call-to-action .button {
     margin: 0;
     appearance: none;
     cursor: pointer;
-    background-color: white;
+    background-color: black;
     border-radius: 9999px;
     box-shadow: var(--slider-shadow);
     opacity: 0.5;

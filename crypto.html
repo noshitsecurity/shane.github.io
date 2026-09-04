@@ -117,7 +117,7 @@
                <dt><b>Concepts</b></dt>
                <dd><code></code> Transposition, Substitution, Base64
                <dt><b>Technologies</b></dt>
-               <dd><code></code> Python, Directory Name Service, Dig, Unix Shell
+               <dd><code></code> Python, Domain Name System, Dig, Unix Shell
             </dl>
          </div><!-- end columns -->
          
@@ -182,14 +182,14 @@
 
             <dl class="lining">
                <dt><b>Concepts</b></dt>
-               <dd><code></code> Variant Beaufort, CHAP, Differential Cryptanalysis
+               <dd><code></code> Polyalphabetic Substitution, Variant Beaufort, CHAP, Key Wrapping
                <dt><b>Technologies</b></dt>
                <dd><code></code> CyberChef or pencil and paper
             </dl>
 
          </div> <!-- end columns -->
 
-            <div class="twelve columns add-bottom"> 
+         <div class="twelve columns add-bottom"> 
             
             <h5>Context</h5>
             <p>
@@ -201,7 +201,7 @@
             </p>
 
             <p>
-               The first thing we notice is the underlined portions on either end of the cryptogram being the <i style="color: red">prefix</i> on the left side and the <i style="color: green">keyword</i> on the right side. By using simple critical thinking skills, we can infer that the afell:// part must surely decipher to https://, meaning there is more than one way to solve this problem: you can either attempt to brute force the solution by working your way from left to right and using differential cryptanalysis and adaptive chosen plaintext attacks to render the https:// prefix, or you can cut directly through the center by discovering the key. In these challenges, the key to solving the puzzle is hidden in plain sight and quite literally staring you right in the face.
+               The first thing we notice is the underlined portions on either end of the cryptogram being the <i style="color: red">prefix</i> on the left side and the <i style="color: green">keyword</i> on the right side. By using simple critical thinking skills, we can infer that the afell:// prefix must surely decipher to https://, meaning there is more than one way to solve this problem: you can either attempt to brute force the solution by working your way from left to right and using differential cryptanalysis and adaptive chosen plaintext attacks to render the https:// prefix, or you can cut directly through the center by discovering the key. In these challenges, the key to solving the puzzle is hidden in plain sight and quite literally staring you right in the face.
             
             <p>
                To align with Alexander's assumption that it would make no difference how the knot was loosed, we provided several decrypted versions of these "gordian knots" during all of our Tier II challenges, allowing students to leverage attacks like Ciphertext Only, Known Plaintext, Related Key, Chosen Ciphertext, and adaptive permutations to discover strings that leveraged mimic functions or key wrapping operations to obfuscate or even oppose the traditional method of using the keyword to solve the puzzle. As time went on, the Gordian Knot was used in all remaining challenges, and by Tier V, the prefix was dropped, the entire string was obfuscated, and the keyword became the only visible part.
@@ -211,18 +211,42 @@
                <code>xxxxxxxxxxxxxx.xxx/history</code>
             </p>
             
-            <aside class="pull-quote add-bottom">
+            <aside class="pull-quote">
                <blockquote cite="https://en.wikipedia.org/wiki/Gordian_Knot" target="_blank">
                   <p>
                      Alexander pulled the linchpin from the pole to which the yoke was fastened, exposing the two ends of the cord and allowing him to untie the knot without having to cut through it.
                   </p>
                </blockquote>
             </aside>
-         </div>
-
-         <div class="row">
+         </div> <!-- end context -->
+         
+         <div class="row add-bottom">
             <hr />
          </div>
+
+         <div class="twelve columns add-bottom"> 
+
+            <h3>Example four: The Skeleton Key</h3>
+
+            <p>
+               <img src="images/crypto/skeleton.jpg" /><br />
+               <small>This image contains a string consisting of 28 characters spanning 3 subsets that is used in several differnet multi-step operations to demonstrate the concept of an algorithm design pattern.</small>
+            </p>
+
+            <dl class="lining">
+               <dt><b>Concepts</b></dt>
+               <dd><code></code> Symmetric Encryption, Vernam Cipher, Key Wrapping, CHAP, One-Time Pad
+               <dt><b>Technologies</b></dt>
+               <dd><code></code> CyberChef exclusive
+            </dl>
+         </div>
+
+         <div class="twelve columns add-bottom">
+
+            <h5>Context</h5>
+            <p>Following in the footsteps of the <i>Dinosaur Key</i> that came before it, the <i>Skeleton Key</i> is used to power everything from symmetric encryption, such as to extract files hidden with steganography; as a base key for different formulas used as one-time pad; as the master password for secret keys used in assymetric cryptosystems such as PGP, and even as a string to produce an md5 hash, lending additional or alternate use for all the previous categories and more. The Skeleton Key was used to introduce students to the concepts of cryptograhpic rounding, key wrapping, multi-step operations and one-time pad, and then later used to teach cryptanalysis concepts such as related key or slide attacks.  </p>
+         </div>
+
       </div>
    </section>
 
@@ -244,12 +268,58 @@
 
          <div class="twelve columns add-bottom"> 
 
-            <h3>Example one: digthis.py</h3>
+            <h3>Example one: pithos</h3>
 
             <p>
-               <img src="images/crypto/digthis.png" />
-               <small>This image contains a python script that only executes via the interpreter, in which it queries the NoShitSecurity website for a DNS TXT record and then deciphers it to deliver a special link.</small>
+               <img src="images/crypto/magic.jpg" />
+               <small>This image contains a simple cryptogram that can be gleaned from the footer of the NSS website or from the DNS TXT records, and when deciphered it delivers a special link.</small>
             </p>
+
+             <dl class="lining">
+               <dt><b>Concepts</b></dt>
+               <dd><code></code> Substitution, Transposition, Base64
+               <dt><b>Techniques</b></dt>
+               <dd><code></code>Magic, Brute force, ROT-to-Reverse
+            </dl>
+         </div>
+
+         <div class="twelve columns add-bottom">
+
+            <h5>Context</h5>
+            <p>When the <i>Sincera's Pandora</i> website was launched, this cryptogram was shared across social media and embedded into the footer of the HTML and in the DNS records of the site as a way to invite students to join the Discord server where additional lessons, coursework, and challenges awaited. Only 3 steps are required to find a solution, and due to the simplicity of the design, many students were able to solve it within minutes or even seconds. In the example above, the "magic" operation in CyberChef instantly identifies Base64 as a wrapping mechanism, and a keen eye can see that the unwrapped snippet is most likely ROT47 or a variant of it. In 2022, a script was provided to automatically decipher the string and also give students an opportunity to earn additional ranks if they could explain how the script worked.</p>
+         
+         </div><!-- end context -->
+
+         
+         <div class="row add-bottom">
+            <hr />
+         </div>
+
+         <div class="twelve columns add-bottom"> 
+
+            <h3>Example two: The Shovel</h3>
+
+            <p>
+               <img src="images/crypto/shovel.jpg" />
+               <small>This image contains a layered cryptogram that can be gleaned from the root of the NSS website, and once the masking layer is unwrapped, it deciphers itself to reveal the <i>Skeleton Key</i>.</small>
+            </p>
+
+             <dl class="lining">
+               <dt><b>Concepts</b></dt>
+               <dd><code></code> Substitution, Transposition, Base64, One-Time-Pad
+               <dt><b>Techniques</b></dt>
+               <dd><code></code>Magic, Brute force, One-Time Pad, ROT-to-Reverse
+            </dl>
+         </div>
+
+         <div class="twelve columns add-bottom">
+
+            <h5>Context</h5>
+            <p>When the <i>Sincera's Pandora</i> website was launched, this cryptogram was placed in the root directory of the website and instructions were given to "curl the shovel" which meant to issue the Unix shell command <i>curl</i> to retrieve it. Since the NSS website lives on a GitHub repository, the <i>-sSL</i> flags must be tacked onto the end of the command to follow redirects and successfully retrieve the shovel, and once the Base64 masking layer is unwrapped, this cryptogram uses the same techniques found in the Padlock to deliver hints and clues in each successive layer that effectively make the cryptogram solve itself, rendering a completed <i>Skeleton Key</i> that is used in other applications and challenges. </p>
+         
+         </div><!-- end context -->
+
+        
 
       </div>
    </section>
